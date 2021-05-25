@@ -15,12 +15,14 @@ keytool -list -keystore key.keystore
 
 ## Sign
 
-jarsigner -verbose -sigalg SHA256withRSA -digestalg SHA-256 -keystore key.keystore reverse_tcp.apk krnick
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore key.keystore reverse_tcp.apk krnick
 
 ## check signing
 
 jarsigner -verify -verbose -certs reverse_tcp.apk
 
 ## optimization
+
+echo "export PATH=\$PATH:~/Library/Android/sdk/build-tools/30.0.3/" >> ~/.bash_profile && . ~/.bash_profile
 
 zipalign -v 4 reverse_tcp.apk singed_reverse_tcp.apk
