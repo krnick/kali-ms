@@ -23,6 +23,6 @@ jarsigner -verify -verbose -certs reverse_tcp.apk
 
 ## optimization
 
-echo "export PATH=\$PATH:~/Library/Android/sdk/build-tools/30.0.3/" >> ~/.bash_profile && . ~/.bash_profile
+echo "export PATH=\$PATH:~/Library/Android/sdk/build-tools/30.0.3/" >> ~/.profile && . ~/.profile
 
 zipalign -v 4 reverse_tcp.apk singed_reverse_tcp.apk
